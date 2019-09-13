@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>자녀 평균 키 계산</title>
+	<style type="text/css">
+		input{width: 80px;}
+		div{margin-top: 15px; margin-bottom: 15px; }
+		.manbox{width: 400px; height: 150px; background: #FFD4DF;}
+		.womanbox{width: 400px; height: 150px; background: #C0CFFE;}
+	</style>
+</head>
+<body>
+	부모님의 키로 자녀의 평균 키를 알아봅니다.<br>
+	※유전적인 요인보다 후천적(환경적) 요인이 더 성장에 영향을 미칩니다.
+	<div class="manbox">
+		<div>남자<br>
+		<input type="number" id="dheight1" placeholder="아버지 키">cm + 
+		<input type="number" id="mheight1" placeholder="어머니 키">cm
+		<input type="submit" value="확인" id="ok1">
+		</div>
+		<div id="monitor1">자녀의 평균 키는 000cm입니다.</div>
+	</div>
+	
+	<div class="womanbox">
+		<div>여자<br>
+		<input type="number" id="dheight2" placeholder="아버지 키">cm + 
+		<input type="number" id="mheight2" placeholder="어머니 키">cm
+		<input type="submit" value="확인" id="ok2">
+		</div>
+		<div id="monitor2">자녀의 평균 키는 000cm입니다.</div>
+	</div>
+	
+	
+
+	<script type="text/javascript">
+	
+		ok1.onclick = function(){
+			var sweight = (dheight1.value*1 + mheight1.value*1 + 13 )/2; 
+			monitor1.innerHTML = "자녀의 평균 키는 " + Math.round(sweight) + "cm입니다.";
+		}
+
+		ok2.onclick = function(){
+			var sweight = (dheight1.value*1 + mheight1.value*1 - 13 )/2; 
+			monitor2.innerHTML = "자녀의 평균 키는 " + Math.round(sweight) + "cm입니다.";}
+
+	</script>
+
+</body>
+</html>
